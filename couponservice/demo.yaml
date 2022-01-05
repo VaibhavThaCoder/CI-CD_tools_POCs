@@ -1,0 +1,14 @@
+customerName: vaibhav
+orderId: 123
+date: 12/12/2020
+shipped: false
+moreData: null
+products:
+  - name: macBook
+    price: 1500
+  - name: iphone
+  - name: Desktop
+address: 
+  street: Street field
+  city: Austin
+

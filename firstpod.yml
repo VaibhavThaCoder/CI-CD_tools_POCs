@@ -6,6 +6,7 @@ metadata:
     app: fp
     release: stable
     team: red
+  
 spec:
   containers:
     - name: db
