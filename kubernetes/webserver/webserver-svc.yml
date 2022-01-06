@@ -7,6 +7,6 @@ spec:
   selector:
     app: httpd
   ports:
-    - nodePort: 30123  #port with service is exposed outside
+    - nodePort: 30123  #port with service is exposed to outside world
       port: 80         #port on the pod itself
       targetPort: 80   #container with in the service, usually we use the same port

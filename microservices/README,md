@@ -1,1 +1,7 @@
+these k8s related files for microservices
+to run db us
+> kubectl create -f docker-mysql-configmap.yml,docker-mysql-deployment.yml,docker-mysql-service.yml
 
+to run all these microservices
+cmd
+> kubectl create -f coupon-service-deployment.yml,coupon-service-svc.yml,product-service-deployment.yml,product-service-svc.yml
