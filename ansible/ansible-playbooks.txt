@@ -1,0 +1,45 @@
+vi filecopy.yml
+ansible-playbook filecopy.yml
+
+- hosts: all
+  vars:
+    msg: "Hello Ansible"
+  tasks:
+    - name: Test
+      copy:
+        dest: /root/abc.txt
+        content: "{{msg}}"
+		
+vi loop.yml		
+ansible-playbook loop.yml
+
+- hosts: all
+  tasks:
+          - name: create directories if they do not exist
+            file:
+                    path: "{{item}}"
+                    state: directory
+            with_items:
+                    - dir1
+                    - dir2
+
+apt-get remove git
+vi install-packages.yml
+
+ansible-playbook install-packages.yml
+ansible-playbook install-packages.yml --tags="start"
+
+- hosts: all
+  tasks:
+          - name: install packages
+            apt:
+                    name:
+                            - git
+                            - mysql-server
+                    update_cache: yes
+            tags:
+                    - install
+          - name: start-mysql
+            service: name=mysql state=started
+            tags:
+                    - start
